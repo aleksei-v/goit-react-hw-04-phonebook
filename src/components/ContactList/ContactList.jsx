@@ -24,9 +24,6 @@ const ContactList = ({ contacts, OnDeleteContact }) => {
             }))}
         </Box>)
 };
-
-
-
     
 ContactList.propTypes = {
     OnDeleteContact: PropTypes.func.isRequired,
