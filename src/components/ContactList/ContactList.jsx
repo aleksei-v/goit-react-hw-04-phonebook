@@ -1,20 +1,16 @@
-import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { Box } from 'components/Box';
  import { Button } from '../ContactForm/ContactForm.styled';
 
-class ContactList extends Component {
-    
-    render() {
-        const { contacts, OnDeleteContact } = this.props;
-        return (
-            <Box
-                as="ul"
-                display="flex"
-                flexDirection="column"
-                p={4}
-                alignItems="center"
-            >
+const ContactList = ({ contacts, OnDeleteContact }) => {
+    return (
+        <Box
+            as="ul"
+            display="flex"
+            flexDirection="column"
+            p={4}
+            alignItems="center"
+        >
             {contacts.map((({ id, name, number }) => {
                 return (
                     <li key={id}>
@@ -23,12 +19,13 @@ class ContactList extends Component {
                             OnDeleteContact(id)
                         }>Удалить</Button>
                     </li>
-                
+            
                 )
             }))}
         </Box>)
-    }
 };
+
+
 
     
 ContactList.propTypes = {
